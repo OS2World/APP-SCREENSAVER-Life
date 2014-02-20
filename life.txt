@@ -1,0 +1,51 @@
+This is a PM implementation of the game of life,
+with source.
+It has some optional extensions, as it provides
+several different cell types.
+
+The game of life operates on an array of
+cells, whre each cell lives as long as it has
+exactly 2 or 3 neighbours out of eight possible, 
+and new cells are born into locations with exactly
+3 neighbours.
+See life.c and life.cnf for a description
+of the extensions, and how to set up
+different colors.
+
+The program is useful as something to look
+at when you are bored.  It may also
+be incorporated into a screen-saver.
+
+The source is provided as an example of
+PM programming.  It isn't very pretty, but
+it is free.  The use of semaphores in the
+program may seem unnecessary, but it
+was necessary when I used a slower
+way of drawing.  GpiDrawBits
+that I now use is fast, and copies an entire
+array of cells in one operation.
+
+The program takes 3 required parameters:
+life x y size
+"x" and "y" is the size of the game - in cells.
+"size" is the size of a single cell - in pixels.
+
+The game allocates approximately 2*x*y bytes.
+
+Examples:
+life 800 600 1
+This game covers an 800x600 screen, with 1-pixel cells.
+It will use 960k for the cell arrays, and turns may
+take 5-6 seconds on a 386.
+
+life 80 60 10
+This will cover an 800x600 screen, with 10 by 10 pixel cells.
+It will use 9.6k for data structures, and a 386 will display
+several turns per second.
+
+life 40 30 2
+This gives a 80 by 60 window, wich will update fast.
+
+
+The game of life
+

@@ -1,0 +1,48 @@
+    0 0 0
+    255 100 100
+    100 255 100
+    100 100 255
+    0 255 255
+    255 0 255
+    255 255 0
+    255 255 255
+    192 192 192
+    96 96 96
+    128 128 0
+    0 0 192
+    192 0 0
+10  1  2  3
+ 4  5  6 11
+12  7  8  9
+
+Organization of this file:
+The first line is the R G B colors for the background.  The next 12 lines
+is the RGB colors for the 12 different species of cells.  If my
+colors doesn't look good/distinct on your display, try something else.
+PM will try to map the colors to some palette if you have 256
+colors or less.
+After the colors comes the distribution of starting colonies.  The program
+divides the area used into a grid of 3 rows and 4 columns.  Each element
+in this grid is filled with a mix of background and the celltype specified
+for that position.  The rest of the file isn't used, and may be filled
+with comments like this.
+The species 1,2 & 3 are of type intolerant,
+species 4,5 & 6 are of type tolerant,
+species 7,8 & 9 are of type symbiotic I,
+and species 10, 11 & 12 are of type symbiotic II.
+See "life.c" for a description of the types.
+
+1 4 7 10   This is an alternative layout.  Each column has cells
+2 5 8 11   of same type, but different species.  Different species
+3 6 9 12   of type symbiotic II are adjacent, and may therefore
+             "take over" the screen fast.
+
+You don't have to use all the different cell types if you
+don't want to.  Try the following cell array if you
+want a classical game of life:
+1 1 1 1
+1 1 1 1
+1 1 1 1
+
+
+
